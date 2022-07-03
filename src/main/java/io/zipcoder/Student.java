@@ -39,7 +39,7 @@ public class Student {
         //examScores.toArray();
         StringBuilder stringBuilder = new StringBuilder();
         for(double i : this.examScores){
-            stringBuilder.append("Exam " + this.examScores.indexOf(i) + " -> " + this.examScores.get(examScores.indexOf(i)) + "\n");
+            stringBuilder.append('\t'+ ("Exam " + this.examScores.indexOf(i) + " -> " + this.examScores.get(examScores.indexOf(i)) + "\n"));
         }
         return stringBuilder.toString();
 //        for (int i = 0; i < examScores.toArray().length-1; i++){

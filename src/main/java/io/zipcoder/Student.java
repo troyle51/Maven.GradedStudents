@@ -1,6 +1,7 @@
 package io.zipcoder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Student {
     private String firstName;
@@ -10,7 +11,7 @@ public class Student {
     public Student(String firstName, String lastName, Double[] testScores){
         this.firstName = firstName;
         this.lastName = lastName;
-        this.examScores = new ArrayList<>(testScores.length);
+        this.examScores = new ArrayList<>(Arrays.asList(testScores));
     }
 
     public String getFirstName() {
@@ -34,15 +35,25 @@ public class Student {
     }
 
     public String getExamScores() {
+        //String s = "";
+        //examScores.toArray();
         StringBuilder stringBuilder = new StringBuilder();
-        for(double val : this.examScores){
-            stringBuilder.append("Exam " + getNumberOfExamsTaken() + " -> " + this.examScores.set(0, val) + "\n");
+        for(double i : this.examScores){
+            stringBuilder.append("Exam " + this.examScores.indexOf(i) + " -> " + this.examScores.get(examScores.indexOf(i)) + "\n");
         }
         return stringBuilder.toString();
+//        for (int i = 0; i < examScores.toArray().length-1; i++){
+//            //stringBuilder.append("Exam " + examScores.get(i));
+//            s = "Exam " + examScores.toArray()[i] + "Score";
+//        }
     }
 
     public void addExamScore(double examScore){
         this.examScores.add(examScore);
+    }
+
+    public void setExamScore(int examNumber, double newScore){
+        this.examScores.add(examNumber, newScore);
     }
 
 }

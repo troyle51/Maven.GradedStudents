@@ -65,4 +65,13 @@ public class Student {
         return Double.valueOf(total/examScores.size());
     }
 
+    @Override
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("Student name: " + getFirstName() + " " + getLastName() + "\n");
+        str.append("> Average Score: " + getAverageExamScore() + "\n");
+        str.append("> Exam Scores: \n" + getExamScores());
+        return str.toString();
+    }
+
 }

@@ -52,7 +52,7 @@ public class Student {
         this.examScores.add(examScore);
     }
 
-    public void setExamScore(int examNumber, double newScore){
+    public void setExamScore(int examNumber, double newScore){ //Not working properly
         this.examScores.add(examNumber, newScore);
     }
 

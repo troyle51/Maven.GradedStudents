@@ -56,4 +56,13 @@ public class Student {
         this.examScores.add(examNumber, newScore);
     }
 
+    public Double getAverageExamScore(){
+        int total = 0;
+        for (int i = 0; i < examScores.size()-1; i++){
+            total += examScores.get(i);
+        }
+
+        return Double.valueOf(total/examScores.size());
+    }
+
 }

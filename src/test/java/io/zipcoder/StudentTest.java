@@ -49,4 +49,19 @@ public class StudentTest {
         // Then
         System.out.println(output);
     }
+
+    @Test
+    public void getAvgScoreTest(){
+        // : Given
+        String firstName = "Leon";
+        String lastName = "Hunter";
+        Double[] examScores = { 100.0, 150.0, 250.0, 0.0 };
+        Student student = new Student(firstName, lastName, examScores);
+
+        // When
+        Double output = student.getAverageExamScore();
+
+        // Then
+        System.out.println(output);
+    }
 }

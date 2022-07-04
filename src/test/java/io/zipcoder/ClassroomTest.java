@@ -5,7 +5,7 @@ import org.junit.Test;
 public class ClassroomTest {
 
     @Test
-    public void getAverageExamScore(){
+    public void getAverageExamScoreTest(){
         // : Given
         Double[] s1Scores = { 100.0, 150.0 };
         Double[] s2Scores = { 225.0, 25.0 };

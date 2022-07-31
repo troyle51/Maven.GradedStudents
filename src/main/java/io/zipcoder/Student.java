@@ -8,6 +8,10 @@ public class Student {
     private String lastName;
     private ArrayList<Double> examScores;
 
+    public Student(){
+
+    }
+
     public Student(String firstName, String lastName, Double[] testScores){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -35,17 +39,11 @@ public class Student {
     }
 
     public String getExamScores() {
-        //String s = "";
-        //examScores.toArray();
         StringBuilder stringBuilder = new StringBuilder();
         for(double i : this.examScores){
             stringBuilder.append('\t'+ ("Exam " + this.examScores.indexOf(i) + " -> " + this.examScores.get(examScores.indexOf(i)) + "\n"));
         }
         return stringBuilder.toString();
-//        for (int i = 0; i < examScores.toArray().length-1; i++){
-//            //stringBuilder.append("Exam " + examScores.get(i));
-//            s = "Exam " + examScores.toArray()[i] + "Score";
-//        }
     }
 
     public void addExamScore(double examScore){

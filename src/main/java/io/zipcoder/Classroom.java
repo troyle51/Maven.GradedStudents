@@ -24,7 +24,7 @@ public class Classroom {
         for (Student s : students){
             average += s.getAverageExamScore();
         }
-        return average / students.length;
+        return average;
     }
 
     public void addStudent(Student student){
@@ -49,10 +49,28 @@ public class Classroom {
 
     public Student[] getStudentsByScore(){
         ArrayList<Student> sorted = new ArrayList<>(Arrays.asList(students));
-        sorted.sort(Comparator.comparing(Student::getExamScores).thenComparing(Student::getFirstName));
+        sorted.sort(Comparator.comparing(Student::getAverageExamScore));
         //sorted.sort(Comparator.comparing(Student::getFirstName));
 
         Student[] copy = sorted.toArray(new Student[sorted.size()]);
         return copy;
+    }
+
+    public void getGradeBook(){
+        if(getAverageExamScore() > 90){
+            System.out.println("A");
+        }
+        if(getAverageExamScore() < 90 && getAverageExamScore() >= 80){
+            System.out.println("B");
+        }
+        if(getAverageExamScore() < 80 && getAverageExamScore() >= 70){
+            System.out.println("C");
+        }
+        if(getAverageExamScore() < 70 && getAverageExamScore() >= 60){
+            System.out.println("D");
+        }
+        if(getAverageExamScore() < 60){
+            System.out.println("F");
+        }
     }
 }

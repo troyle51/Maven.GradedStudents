@@ -1,13 +1,14 @@
 package io.zipcoder;
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Classroom {
     private Student[] students;
     private int maxNumberOfStudents;
 
     public Classroom(Integer maxNumberOfStudents){
-        this.students = new Student[maxNumberOfStudents];
+        students = new Student[maxNumberOfStudents];
     }
     public Classroom(Student[] students){
         this.students = students;
@@ -46,9 +47,12 @@ public class Classroom {
         }
     }
 
-    public void getStudentsByScore(){
-        for(Student s : students){
-            s.getExamScores();
-        }
+    public Student[] getStudentsByScore(){
+        ArrayList<Student> sorted = new ArrayList<>(Arrays.asList(students));
+        sorted.sort(Comparator.comparing(Student::getExamScores).thenComparing(Student::getFirstName));
+        //sorted.sort(Comparator.comparing(Student::getFirstName));
+
+        Student[] copy = sorted.toArray(new Student[sorted.size()]);
+        return copy;
     }
 }

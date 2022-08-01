@@ -64,4 +64,26 @@ public class ClassroomTest {
 
         Assert.assertEquals(classroom.getStudents()[0], null);
     }
+    @Test
+    public void getStudentByScore(){
+        Double[] s1Scores = { 100.0, 150.0 };
+        Double[] s2Scores = { 225.0, 25.0 };
+        Double[] s3Scores = { 225.0, 25.0 };
+        Double[] s4Scores = { 325.0, 250.0 };
+
+        Student s1 = new Student("Tom", "One", s1Scores);
+        Student s2 = new Student("Tweet", "Two", s2Scores);
+        Student s3 = new Student("Jerry", "Hoo", s3Scores);
+        Student s4 = new Student("Jack", "From", s4Scores);
+
+        Student[] students = {s1,s2,s3, s4};
+        Classroom classroom = new Classroom(students);
+
+        // When
+        classroom.getStudentsByScore();
+
+        // Then
+        System.out.println(Arrays.toString(classroom.getStudentsByScore()));
+
+    }
 }
